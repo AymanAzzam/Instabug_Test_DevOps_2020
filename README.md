@@ -15,7 +15,7 @@ $ sudo apt-get install libgtk2.0-0 libgtk-3-0 libnotify-dev libgconf-2-4 libnss3
 5. Opening port 8080 for the machine.
 
 ## To Run the App on AWS without dockerfile
-Run this bash script
+Run this bash script with the DNS name for the instance (for Local machine write 0.0.0.0)
 ```sh
-$ ./run_app.sh
+$ ./run_app.sh Public_DNS
 ```
