@@ -1,8 +1,6 @@
 pipeline {
      agent {
         docker { 
-             image 'node:current-slim' 
-             args '-u root:root'
 	     image 'cypress/included:3.2.0' 
              args '-u root:root'
         }
