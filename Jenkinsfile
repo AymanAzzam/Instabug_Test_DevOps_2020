@@ -1,7 +1,9 @@
 pipeline {
-     agent  docker {
-            image 'node:current-slim'
+     agent {
+        docker {
+            image 'node:current-slim'  
         }
+    }
      stages {
          stage('Build') {
              steps {
