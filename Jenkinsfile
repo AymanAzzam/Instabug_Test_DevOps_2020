@@ -1,9 +1,10 @@
 pipeline {
-     agent any
+     agent  docker {
+            image 'node:current-slim'
+        }
      stages {
          stage('Build') {
              steps {
-                 sh -t 'sudo apt-get install nodejs'
                  sh 'npm install'
                  sh '''
                      echo "Multiline shell steps works too"
