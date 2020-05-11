@@ -57,7 +57,7 @@ $ ./run_docker.sh ec2-3-226-249-235.compute-1.amazonaws.com
 $ cd Jenkins
 $ ./install.sh
 ```
-2. Configure Jenkins and install BlueOcean plugin then Create pipeline.
+2. Configure Jenkins and install BlueOcean, Xvfb and NodeJS plugins then Create pipeline.
 
 3. Add the user to the docker group using the next command:
 ```sh
