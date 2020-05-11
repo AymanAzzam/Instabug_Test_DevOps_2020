@@ -4,7 +4,7 @@
 git clone https://github.com/dobromir-hristov/todo-app.git
 
 # Copy the Dockerfile to the app directory
-cp Dockerfile scripts/docker/todo-app
+cp Dockerfile todo-app/
 
 # Copy the run_docker file to the app directory
-cp scripts/docker/run_docker scripts/docker/todo-app
+cp scripts/docker/run_docker.sh todo-app/
