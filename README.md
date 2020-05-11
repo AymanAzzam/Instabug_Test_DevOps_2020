@@ -20,11 +20,15 @@ From this directory run the following Scripts:
 ```sh
 $ ./scripts/prerequisites.sh
 ```
-2. Run this bash script with the DNS name for the instance (for Local machine write 127.0.0.1)
+2. Run the following script to prepare the todo-app repo
 ```sh
-$ ./scripts/local/run_app.sh ec2-18-205-2-152.compute-1.amazonaws.com
+$ ./scripts/docker/download_app.sh
 ```
-3. Open DNS_Name:8080 in browser to access the todo-app.
+3. Run this bash script with the DNS name for the instance (for Local machine write 127.0.0.1)
+```sh
+$ ./todo-app/run_app.sh ec2-18-205-2-152.compute-1.amazonaws.com
+```
+4. Open DNS_Name:8080 in browser to access the todo-app.
 
 ## To Run the App on AWS Cloud9 on docker Container
 From this directory run the following Scripts:
@@ -38,6 +42,6 @@ $ ./scripts/docker/download_app.sh
 ```
 3. Run this bash script with the DNS name for the instance (for Local machine write 127.0.0.1)
 ```sh
-$ ./scripts/docker/todo-app/run_docker.sh ec2-18-205-2-152.compute-1.amazonaws.com
+$ ./todo-app/run_docker.sh ec2-18-205-2-152.compute-1.amazonaws.com
 ```
 4. Open DNS_Name:8080 in browser to access the todo-app.
