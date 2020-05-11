@@ -22,7 +22,7 @@ $ ./scripts/prerequisites.sh
 ```
 2. Run the following script to prepare the todo-app repo
 ```sh
-$ ./scripts/docker/download_app.sh
+$ ./scripts/local/download_app.sh
 ```
 3. Run this bash script with the DNS name for the instance (for Local machine write 127.0.0.1)
 ```sh
