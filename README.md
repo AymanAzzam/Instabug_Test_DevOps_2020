@@ -16,6 +16,7 @@ $ sudo apt-get install libgtk2.0-0 libgtk-3-0 libnotify-dev libgconf-2-4 libnss3
 
 ## To Run the App on AWS Cloud9 without dockerfile
 Note: you need to change the DNS_Name inside Dockerfile first. <br />
+
 From this directory run the following Scripts:
 1. Run the script prerequisites.sh to install yarn and Cypress dependencies
 ```sh
