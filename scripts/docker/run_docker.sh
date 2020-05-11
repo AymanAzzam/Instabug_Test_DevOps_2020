@@ -6,4 +6,4 @@ DNS_Name=$1
 docker build --tag todo-app .
 
 # Run The Container in the background
-docker run -p 8080:8080 --hostname $DNS_Name -d todo-app
+docker run -p 1024:1024 --hostname $DNS_Name -d todo-app

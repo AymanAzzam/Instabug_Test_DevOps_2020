@@ -14,9 +14,9 @@ COPY . /app/
 RUN apt-get update -y && npm install
 
 ## Step 4:
-# Expose port 8080
-EXPOSE 8080
+# Expose port 1024
+EXPOSE 1024
 
 ## Step 5:
 # Run app at container launch
-CMD yarn serve --host ec2-18-205-2-152.compute-1.amazonaws.com --disable-host-check
+CMD yarn serve --host ec2-18-205-2-152.compute-1.amazonaws.com --disable-host-check --port

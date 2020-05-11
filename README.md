@@ -12,7 +12,7 @@ $ npm install -g yarn
 ```sh
 $ sudo apt-get install libgtk2.0-0 libgtk-3-0 libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb -y
 ```
-5. Opening port 8080 for the machine.
+5. Opening port 1024 for the machine.
 
 ## To Run the App on AWS Cloud9 without dockerfile
 Note: you need to change the DNS_Name inside Dockerfile first. <br />
@@ -31,7 +31,7 @@ $ ./scripts/local/download_app.sh
 $ cd todo-app
 $ ./run_app.sh ec2-18-205-2-152.compute-1.amazonaws.com
 ```
-4. Open DNS_Name:8080 in browser to access the todo-app.
+4. Open DNS_Name:1024 in browser to access the todo-app.
 
 ## To Run the App on AWS Cloud9 on docker Container
 Note: you need to change the DNS_Name inside Dockerfile first.
@@ -49,4 +49,4 @@ $ ./scripts/docker/download_app.sh
 $ cd todo-app
 $ ./run_docker.sh ec2-18-205-2-152.compute-1.amazonaws.com
 ```
-4. Open DNS_Name:8080 in browser to access the todo-app.
+4. Open DNS_Name:1024 in browser to access the todo-app.
