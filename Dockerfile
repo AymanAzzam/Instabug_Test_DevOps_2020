@@ -19,4 +19,4 @@ EXPOSE 1024
 
 ## Step 5:
 # Run app at container launch
-CMD yarn serve --host ec2-18-205-2-152.compute-1.amazonaws.com --disable-host-check --port
+CMD yarn serve --host  ec2-3-226-249-235.compute-1.amazonaws.com --disable-host-check --port 1024

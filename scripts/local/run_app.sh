@@ -10,4 +10,4 @@ yarn test:unit
 yarn test:e2e --headless
 
 # Start the app on port 1024
-yarn serve --host $1 --disable-host-check --port
+yarn serve --host $1 --disable-host-check --port 1024
