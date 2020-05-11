@@ -3,6 +3,8 @@ pipeline {
         docker { 
 	     image 'cypress/included:3.2.0' 
              args '-u root:root'
+	     image 'node:current-slim' 	
+             args '-u root:root'
         }
     }
      stages {
