@@ -4,6 +4,7 @@ pipeline {
          stage('Build') {
              steps {
                  sh '''
+                     #!/bin/bash
                      if [[ -d /todo-app/ ]]
                      then
                          rm -r todo-app
