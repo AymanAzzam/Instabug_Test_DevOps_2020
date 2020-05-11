@@ -17,7 +17,8 @@ pipeline {
          }
          stage('Test') {
               steps { 
-                 sh 'echo Test'
+                 sh 'yarn test:unit'
+                 sh 'yarn test:e2e --headless'
               }
          }         
      }
