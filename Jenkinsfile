@@ -4,6 +4,10 @@ pipeline {
          stage('Build') {
              steps {
                  sh '''
+                     if [[ -d /todo-app/ ]]
+                     then
+                         rm -r todo-app
+                     fi
                      git clone https://github.com/dobromir-hristov/todo-app.git
                      mv todo-app/* .
                      npm install -g yarn
