@@ -61,5 +61,5 @@ $ ./install.sh
 
 3. Add the user to the docker group using the next command:
 ```sh
-$ sudo usermod -a -G docker ubuntu
+$ sudo usermod -a -G docker jenkins
 ```
