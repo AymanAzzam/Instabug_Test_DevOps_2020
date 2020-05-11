@@ -3,7 +3,7 @@ pipeline {
      stages {
          stage('Build') {
              steps {
-                 sh 'apt install nodejs'
+                 sh 'apt-get install nodejs'
                  sh 'npm install'
                  sh '''
                      echo "Multiline shell steps works too"
