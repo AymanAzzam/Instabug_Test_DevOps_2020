@@ -52,7 +52,7 @@ $ ./run_docker.sh ec2-3-226-249-235.compute-1.amazonaws.com
 4. Open DNS_Name:1024 in browser to access the todo-app.
 
 ## Jenkins
-Run the following coomands from this directory to install the dependencies.
+Run the following commands from this directory to install the dependencies.
 ```sh
 $ cd Jenkins
 $ ./install.sh
