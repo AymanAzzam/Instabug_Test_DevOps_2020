@@ -3,9 +3,7 @@ pipeline {
         docker { 
              image 'node:current-slim' 
              args '-u root:root'
-        }
-	docker { 
-             image 'cypress/included:3.2.0' 
+	     image 'cypress/included:3.2.0' 
              args '-u root:root'
         }
     }
