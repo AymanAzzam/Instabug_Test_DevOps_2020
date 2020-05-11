@@ -21,13 +21,18 @@ pipeline {
          }
          stage('Lint') {
               steps {
-                  sh 'echo Lint'
+                 sh '''
+		     jsonlint package.json
+		     jsonlint cypress.json
+		 '''
               }
          }
          stage('Test') {
               steps { 
-                 sh 'yarn test:unit'
-                 sh 'yarn test:e2e --headless'
+                 sh '''
+                     yarn test:unit
+                     yarn test:e2e --headless
+		 '''
               }
          }         
      }

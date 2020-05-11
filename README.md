@@ -56,8 +56,9 @@ $ ./run_docker.sh ec2-3-226-249-235.compute-1.amazonaws.com
 ```sh
 $ cd Jenkins
 $ ./install.sh
+$ sudo apt-get install jsonlint -y
 ```
-2. Configure Jenkins and install BlueOcean, Xvfb and NodeJS plugins then Create pipeline.
+2. Configure Jenkins and install BlueOcean, Xvfb and NodeJS plugins then Create pipeline using BlueOcean.
 
 3. Add the user to the docker group using the next command:
 ```sh

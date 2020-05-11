@@ -1,8 +1,12 @@
+#!/bin/sh
+
 # Step 1 - Update existing packages
 sudo apt-get update
+echo "Done Update Package"
 
 # Step 2 - Install Java
 sudo apt install -y default-jdk
+echo "Done Install default-jdk"
 
 # Step 3 - Download Jenkins package. 
 # You can go to http://pkg.jenkins.io/debian/ to see the available commands
@@ -17,9 +21,11 @@ sudo sh -c 'echo deb https://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sou
 
 # Step 5 -Update your local package index
 sudo apt update
+echo "Done Update Package"
 
 # Step 6 - Install Jenkins
 sudo apt-get install -y jenkins
+echo "Done Install jenkins"
 
 # Step 7 - Start the Jenkins server
 sudo systemctl start jenkins
