@@ -10,6 +10,7 @@ pipeline {
              steps {
                  sh '''
 		     cp -r todo-app/* .
+		     npm install cypress --save-dev
                      npm install
                  '''
              }
