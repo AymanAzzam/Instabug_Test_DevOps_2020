@@ -10,6 +10,9 @@ pipeline {
              steps {
                  sh '''
 		     cp -r todo-app/* .
+		     cp todo-app/.eslintrc.js .
+		     cp todo-app/.editorconfig .
+		     cp todo-app/.browserslistrc .
 		     npm install cypress --save-dev
                      npm install
                  '''
