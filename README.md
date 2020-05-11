@@ -38,7 +38,6 @@ $ ./scripts/docker/download_app.sh
 ```
 3. Run this bash script with the DNS name for the instance (for Local machine write 127.0.0.1)
 ```sh
-$ cd
 $ ./scripts/docker/todo-app/run_docker.sh DNS_Name
 ```
 4. Open DNS_Name:8080 in browser to access the todo-app.
