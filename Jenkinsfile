@@ -1,6 +1,9 @@
 pipeline {
      agent {
-        docker { image 'node:current-slim' }
+        docker { 
+             image 'node:current-slim' 
+             args '-u root:root'
+        }
     }
      stages {
          stage('Build') {
