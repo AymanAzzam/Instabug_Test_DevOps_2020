@@ -9,6 +9,7 @@ pipeline {
          stage('Build') {
              steps {
                  sh '''
+		     cp todo-app/* .
                      npm install
                  '''
              }
