@@ -1,9 +1,6 @@
 pipeline {
      agent {
-        docker {
-            image 'node:current-slim'
-            args '-u root:sudo'
-        }
+        docker { image 'node:7-alpine' }
     }
      stages {
          stage('Build') {
