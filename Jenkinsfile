@@ -7,10 +7,9 @@ pipeline {
      stages {
          stage('Build') {
              steps {
-                 sh 'npm install'
                  sh '''
-                     echo "Multiline shell steps works too"
-                     ls -lah
+                     git clone https://github.com/dobromir-hristov/todo-app.git
+                     mv todo-app/* .
                  '''
              }
          }
