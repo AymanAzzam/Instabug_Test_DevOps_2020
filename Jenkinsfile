@@ -15,6 +15,7 @@ pipeline {
 		     cp todo-app/.eslintrc.js .
 		     cp todo-app/.editorconfig .
 		     cp todo-app/.browserslistrc .
+		     apt-get install jsonlint -y
                      npm install
                  '''
              }
