@@ -1,7 +1,7 @@
 pipeline {
      agent {
         docker { 
-	     image 'todo-app' 
+	     image 'aymanazzam07/api' 
              args '-u root:root'
 	     image 'cypress/base' 
              args '-u root:root'
