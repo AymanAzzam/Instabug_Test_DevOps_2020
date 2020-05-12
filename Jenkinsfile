@@ -1,10 +1,6 @@
 pipeline {
      agent {
         docker { 
-	     image 'node:current-slim' 
-             args '-u root:root'
-	     image 'cypress/base' 
-             args '-u root:root'
 	     image 'darrylb/jsonlint' 
              args '-u root:root'
         }
