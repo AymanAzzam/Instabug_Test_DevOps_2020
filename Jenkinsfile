@@ -1,6 +1,8 @@
 pipeline {
      agent {
         docker { 
+	     image 'aymanazzam07/todo-app' 
+             args '-u root:root'
 	     image 'darrylb/jsonlint' 
              args '-u root:root'
         }
@@ -33,7 +35,7 @@ pipeline {
               steps([$class: 'Xvfb']) { 
                  sh '''
                      yarn test:unit
-		     yarn test:e2e --headless
+
 		 '''
               }
          }         
