@@ -27,7 +27,7 @@ pipeline {
                      npm install
                  '''
 		 archive '**/target/*.jar'
-		 archiveArtifacts artifacts: '*.json'
+		 archiveArtifacts artifacts: '$JENKINS_HOME/jobs/$JOB_NAME/builds/lastSuccessfulBuild/log'
              }
          }
          stage('Lint') {
@@ -41,7 +41,7 @@ pipeline {
               steps { 
                  sh '''
                      yarn test:unit
-                     yarn test:e2e --headless
+                    
 		 '''
               }
          }         
