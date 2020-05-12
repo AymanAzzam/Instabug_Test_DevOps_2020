@@ -25,7 +25,6 @@ pipeline {
              steps {
                  sh '''
                      npm install
-		     cat '/var/lib/jenkins/jobs/Instabug_Test_DevOps/branches/master/builds/22/log'
                  '''
 		 archive '**/target/*.jar'
 		 archiveArtifacts artifacts: '$JENKINS_HOME/jobs/Instabug_Test_DevOps/branches/master/builds/$BUILD_NUMBER/log'
