@@ -21,8 +21,7 @@ pipeline {
          }
          stage('Build') {
              steps {
-                 sh 'docker run -p 1024:1024 -d todo-app'
-		 waitUntilServicesReady
+                 sh 'docker run --name todo-app -p 1024:1024 -d todo-app'
 		 archiveArtifacts artifacts: '$JENKINS_HOME/jobs/Instabug_Test_DevOps/branches/master/builds/$BUILD_NUMBER/log', allowEmptyArchive: true
 		 archiveArtifacts artifacts: 'node_modules/*/*.json,*.json', allowEmptyArchive: true
              }
