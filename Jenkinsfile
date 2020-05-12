@@ -22,7 +22,7 @@ pipeline {
          stage('Lint') {
               steps {
                  sh '''
-		    /usr/bin/jsonlint-php *.json
+		    jsonlint-php *.json
 		 '''
               }
          }
