@@ -22,8 +22,7 @@ pipeline {
          stage('Lint') {
               steps {
                  sh '''
-		     jsonlint-php package.json
-		     jsonlint-php cypress.json
+		    tidy -q -e *.json
 		 '''
               }
          }
