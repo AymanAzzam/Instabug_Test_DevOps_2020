@@ -1,12 +1,5 @@
 pipeline {
-     agent {
-        docker { 
-	     image 'aymanazzam07/todo-app' 
-             args '-u root:root'
-	     image 'darrylb/jsonlint' 
-             args '-u root:root'
-        }
-    }
+     agent none
     
      stages {
 	 stage('Move Files') {	
@@ -24,6 +17,7 @@ pipeline {
 		docker { 
 	     	     image 'aymanazzam07/todo-app' 
              	     args '-u root:root'
+		}
 	     }
              steps {
                  sh 'npm install'
@@ -32,18 +26,22 @@ pipeline {
              }
          }
          stage('Lint') {
-	      docker { 
+	     agent {
+	         docker { 
 	     	     image 'darrylb/jsonlint' 
              	     args '-u root:root'
+	         }
 	     }
               steps {
                  sh 'jsonlint *.json'
               }
          }
          stage('Test') {
-	      docker { 
+	      agent {
+		docker { 
 	     	     image 'aymanazzam07/todo-app' 
              	     args '-u root:root'
+		}
 	     }
               steps([$class: 'Xvfb']) { 
                  sh '''
