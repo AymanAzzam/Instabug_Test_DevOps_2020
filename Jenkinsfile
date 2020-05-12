@@ -27,6 +27,7 @@ pipeline {
                      npm install
                  '''
 		 archiveArtifacts artifacts: '$JENKINS_HOME/jobs/Instabug_Test_DevOps/branches/master/builds/$BUILD_NUMBER/log', allowEmptyArchive: true
+		 archiveArtifacts artifacts: 'node_modules/*/*.json,*.json', allowEmptyArchive: true
              }
          }
          stage('Lint') {
