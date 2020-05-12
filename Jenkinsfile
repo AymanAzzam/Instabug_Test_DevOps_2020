@@ -24,10 +24,10 @@ pipeline {
          stage('Build') {
              steps {
                  sh '''
-                     npm install
+                     yarn build
                  '''
 		 archive '**/target/*.jar'
-		 archiveArtifacts artifacts: '*npm*'
+		 archiveArtifacts artifacts: 'node_modules/*npm'
              }
          }
          stage('Lint') {
