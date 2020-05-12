@@ -1,7 +1,7 @@
 pipeline {
      agent {
         docker { 
-	     image 'aymanazzam07/api' 
+	     image 'node:current-slim' 
              args '-u root:root'
 	     image 'cypress/base' 
              args '-u root:root'
@@ -11,6 +11,16 @@ pipeline {
     }
     
      stages {
+	 stage('Move Files') {	
+             steps {	
+                 sh '''	
+		     cp -r todo-app/* .	
+		     cp todo-app/.eslintrc.js .	
+		     cp todo-app/.editorconfig .	
+		     cp todo-app/.browserslistrc .	
+                 '''	
+             }	
+         }
          stage('Build') {
              steps {
                  sh '''
