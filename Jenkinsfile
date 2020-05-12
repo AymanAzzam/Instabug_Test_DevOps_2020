@@ -27,7 +27,7 @@ pipeline {
                      npm install
                  '''
 		 archive '**/target/*.jar'
-		 archiveArtifacts artifacts: '$JENKINS_HOME/jobs/$JOB_NAME/builds/lastSuccessfulBuild/log'
+		 archiveArtifacts artifacts: '*.json,$JENKINS_HOME/jobs/$JOB_NAME/builds/lastSuccessfulBuild/log'
              }
          }
          stage('Lint') {
