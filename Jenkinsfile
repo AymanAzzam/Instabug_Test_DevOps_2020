@@ -27,7 +27,7 @@ pipeline {
                      npm install
                  '''
 		 archive '**/target/*.jar'
-		 archiveArtifacts artifacts: '$JENKINS_HOME/jobs/Instabug_Test_DevOps/branches/master/builds/17/log'
+		 archiveArtifacts artifacts: 'build/**'
              }
          }
          stage('Lint') {
