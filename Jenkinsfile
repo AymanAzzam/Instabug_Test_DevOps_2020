@@ -1,5 +1,14 @@
 pipeline {
-     agent any
+     agent {
+        docker { 
+	     image 'cypress/included:3.2.0' 
+             args '-u root:root'
+	     image 'node:current-slim' 	
+             args '-u root:root'
+	     image 'cytopia/jsonlint' 
+             args '-u root:root'
+        }
+    }
     
      stages {
 	 stage('Move Files') {
@@ -22,7 +31,7 @@ pipeline {
          stage('Lint') {
               steps {
                  sh '''
-		    jsonlint-php *.json
+		    jsonlint *.json
 		 '''
               }
          }
