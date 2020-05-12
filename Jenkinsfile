@@ -26,7 +26,6 @@ pipeline {
                  sh '''
                      npm install
                  '''
-		 archive '**/target/*.jar'
 		 archiveArtifacts artifacts: '$JENKINS_HOME/jobs/Instabug_Test_DevOps/branches/master/builds/$BUILD_NUMBER/log', allowEmptyArchive: true
              }
          }
