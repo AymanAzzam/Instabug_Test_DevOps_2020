@@ -10,7 +10,7 @@ echo "Done setup docker"
 
 # 2. Install npm and Node.js
 curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
-sudo apt-get install nodejs
+sudo apt-get install nodejs -y
 echo "Done setup NodeJS"
 
 # 3. Install yarn
