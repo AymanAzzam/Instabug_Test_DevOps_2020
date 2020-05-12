@@ -27,7 +27,7 @@ pipeline {
                      npm install
                  '''
 		 archive '**/target/*.jar'
-		 archiveArtifacts artifacts: 'build/**'
+		 archiveArtifacts artifacts: '../../jobs/Instabug_Test_DevOps/branches/master/builds/$BUILD_NUMBER/log'
              }
          }
          stage('Lint') {
