@@ -1,7 +1,7 @@
 pipeline {
      agent {
         docker { 
-	     image 'cypress/browsers' 
+	     image 'cypress/base' 
              args '-u root:root'
 	     image 'node:current-slim' 	
              args '-u root:root'
