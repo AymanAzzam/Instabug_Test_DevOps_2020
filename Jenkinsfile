@@ -24,6 +24,8 @@ pipeline {
          stage('Build') {
              steps {
                  sh '''
+		     npm ci
+		     npm run cy:verify
                      npm install
                  '''
 		 archiveArtifacts artifacts: '$JENKINS_HOME/jobs/Instabug_Test_DevOps/branches/master/builds/$BUILD_NUMBER/log', allowEmptyArchive: true
