@@ -33,15 +33,11 @@ pipeline {
                  sh 'jsonlint *.json'
               }
          }
-	 wrap([$class: 'Xvfb']) {
-		steps {
-    			sh 'yarn test:e2e'
-		 }
-  	 }
          stage('Test') {
-              steps { 
+              steps([$class: 'Xvfb']) { 
                  sh '''
                      yarn test:unit
+		     yarn test:e2e
 		 '''
               }
          }         
