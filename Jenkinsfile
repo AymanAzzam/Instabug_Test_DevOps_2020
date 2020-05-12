@@ -3,18 +3,22 @@ pipeline {
         docker { 
 	     image 'cypress/included:3.2.0' 
              args '-u root:root'
-	     image 'node:current-slim' 	
-             args '-u root:root'
         }
     }
      stages {
-         stage('Build') {
+	 stage('Move Files') {
              steps {
                  sh '''
 		     cp -r todo-app/* .
 		     cp todo-app/.eslintrc.js .
 		     cp todo-app/.editorconfig .
 		     cp todo-app/.browserslistrc .
+                 '''
+             }
+         }
+         stage('Build') {
+             steps {
+                 sh '''
                      npm install
                  '''
              }
