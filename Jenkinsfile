@@ -1,9 +1,5 @@
 pipeline {
-     agent {
-        docker { 
-	     image 'cypress/included:3.2.0' 
-             args '-u root:root'
-        }
+     agent any
     }
      stages {
 	 stage('Move Files') {
