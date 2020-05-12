@@ -24,7 +24,7 @@ pipeline {
          stage('Build') {
              steps {
                  sh '''
-                     yarn build
+                     npm install
                  '''
 		 archive '**/target/*.jar'
 		 archiveArtifacts artifacts: 'node_modules/*npm'
