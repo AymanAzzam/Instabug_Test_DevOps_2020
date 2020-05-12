@@ -37,7 +37,7 @@ pipeline {
               steps([$class: 'Xvfb']) { 
                  sh '''
                      yarn test:unit
-		     yarn test:e2e
+		     yarn test:e2e --headless
 		 '''
               }
          }         
