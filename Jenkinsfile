@@ -23,25 +23,23 @@ pipeline {
          }
          stage('Build') {
              steps {
-                 sh '''
-                     npm install
-                 '''
+                 sh 'npm install'
 		 archiveArtifacts artifacts: '$JENKINS_HOME/jobs/Instabug_Test_DevOps/branches/master/builds/$BUILD_NUMBER/log', allowEmptyArchive: true
 		 archiveArtifacts artifacts: 'node_modules/*/*.json,*.json', allowEmptyArchive: true
              }
          }
          stage('Lint') {
               steps {
-                 sh '''
-		    jsonlint *.json
-		 '''
+                 sh 'jsonlint *.json'
               }
          }
+	 wrap([$class: 'Xvfb']) {
+    		sh 'yarn test:e2e'
+  	 }
          stage('Test') {
               steps { 
                  sh '''
                      yarn test:unit
-                     yarn test:e2e
 		 '''
               }
          }         
