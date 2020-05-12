@@ -27,7 +27,7 @@ pipeline {
                      npm install
                  '''
 		 archive '**/target/*.jar'
-		 archiveArtifacts artifacts: 'package.json'
+		 archiveArtifacts artifacts: '*.json'
              }
          }
          stage('Lint') {
