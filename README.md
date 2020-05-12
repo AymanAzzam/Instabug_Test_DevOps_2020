@@ -13,7 +13,7 @@
 
 6. Opening port 1024 for app deployment and port 8080 for jenkins.
 
-## To Run the App on AWS Cloud9 without dockerfile
+## Run
 Note: you need to change the DNS_Name inside Dockerfile first. <br />
 
 From this directory run the following Scripts:
@@ -53,3 +53,8 @@ $ sudo usermod -a -G docker jenkins
 ```sh
 $ sudo /etc/init.d/jenkins restart
 ```
+
+## Problems
+1. I can't archiveartifacts artifacts prefixes.
+
+2. End-to-end testing fails in Jenkins with error: spawn Xvfb ENOENT jenkins.
