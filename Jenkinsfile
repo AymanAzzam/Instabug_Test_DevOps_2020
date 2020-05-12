@@ -34,7 +34,9 @@ pipeline {
               }
          }
 	 wrap([$class: 'Xvfb']) {
-    		sh 'yarn test:e2e'
+		steps {
+    			sh 'yarn test:e2e'
+		 }
   	 }
          stage('Test') {
               steps { 
