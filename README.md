@@ -1,66 +1,55 @@
 # Instabug_Test_DevOps
 
 ## PreRequisites 
-PreRequisites for Ubuntu Machine on AWS 18.04 LTS using Cloud9:
-1. Docker (It comes with Cloud9 already).
-2. npm (It comes with Cloud9 already).
+1. Docker.
+
+2. npm.
+
 3. yarn.
-```sh
-$ npm install -g yarn
-```
-4.  Cypress dependencies.
-```sh
-$ sudo apt-get install libgtk2.0-0 libgtk-3-0 libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb -y
-```
-5. Opening port 1024 for the machine.
+
+4. Cypress dependencies.
+
+5. Jenkins.
+
+6. Opening port 1024 for app deployment and port 8080 for jenkins.
 
 ## To Run the App on AWS Cloud9 without dockerfile
 Note: you need to change the DNS_Name inside Dockerfile first. <br />
 
 From this directory run the following Scripts:
-1. Run the script prerequisites.sh to install yarn and Cypress dependencies
+1. Run the script prerequisites.sh to install PreRequisites for ubuntu
 ```sh
-$ ./scripts/prerequisites.sh
+$ sudo ./scripts/prerequisites.sh
 ```
-2. Run the following script to prepare the todo-app repo
-```sh
-$ ./scripts/local/download_app.sh
-```
-3. Run this bash script with the DNS name for the instance (for Local machine write 127.0.0.1)
-```sh
-$ cd todo-app
-$ ./run_app.sh ec2-3-226-249-235.compute-1.amazonaws.com
-```
-4. Open DNS_Name:1024 in browser to access the todo-app.
 
-## To Run the App on AWS Cloud9 on docker Container
-Note: you need to change the DNS_Name inside Dockerfile first.
-From this directory run the following Scripts:
-1. Run the script prerequisites.sh to install yarn and Cypress dependencies
+2. Run the following commands to move all files in same directory
 ```sh
-$ ./scripts/prerequisites.sh
+$ cp scripts/* Dockerfile  todo-app/
 ```
-2. Run the following script to prepare the todo-app repo
-```sh
-$ ./scripts/docker/download_app.sh
-```
-3. Run this bash script with the DNS name for the instance (for Local machine write 127.0.0.1)
+
+3. Run this bash script with the DNS name for the instance to run without Docker (for Local machine write 127.0.0.1)
 ```sh
 $ cd todo-app
-$ ./run_docker.sh ec2-3-226-249-235.compute-1.amazonaws.com
+$ sudo ./run_app.sh ec2-3-226-249-235.compute-1.amazonaws.com
 ```
-4. Open DNS_Name:1024 in browser to access the todo-app.
+
+4. Run this bash script with the DNS name for the instance to run with Docker (for Local machine write 127.0.0.1)
+```sh
+$ cd todo-app
+$ sudo ./run_docker.sh ec2-3-226-249-235.compute-1.amazonaws.com
+```
+
+5. Open DNS_Name:1024 in browser to access the todo-app.
 
 ## Jenkins
-1. Run the following commands from this directory to install the dependencies.
-```sh
-$ cd Jenkins
-$ ./install.sh
-$ sudo apt-get install jsonlint -y
-```
-2. Configure Jenkins and install BlueOcean, Xvfb and NodeJS plugins then Create pipeline using BlueOcean.
+1. Configure Jenkins and install BlueOcean, Xvfb and NodeJS plugins then Create pipeline using BlueOcean.
 
-3. Add the user to the docker group using the next command:
+2. Add the user to the docker group using the next command:
 ```sh
 $ sudo usermod -a -G docker jenkins
+```
+
+3. Restart Jenkins using the following command:
+```sh
+$ sudo /etc/init.d/jenkins restart
 ```
