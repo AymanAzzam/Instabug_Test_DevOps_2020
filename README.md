@@ -24,18 +24,19 @@ $ sudo ./scripts/prerequisites.sh
 
 2. Run the following commands to move all files in same directory
 ```sh
-$ cp scripts/* Dockerfile  todo-app/
+$ cp scripts/* Dockerfile todo-app/
+$ cd todo-app
+$ chmod 777 run_app.sh
+$ chmod 777 run_docker.sh
 ```
 
 3. Run this bash script with the DNS name for the instance to run without Docker (for Local machine write 127.0.0.1)
 ```sh
-$ cd todo-app
 $ sudo ./run_app.sh ec2-3-226-249-235.compute-1.amazonaws.com
 ```
 
 4. Run this bash script with the DNS name for the instance to run with Docker (for Local machine write 127.0.0.1)
 ```sh
-$ cd todo-app
 $ sudo ./run_docker.sh ec2-3-226-249-235.compute-1.amazonaws.com
 ```
 
