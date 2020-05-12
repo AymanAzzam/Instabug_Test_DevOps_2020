@@ -25,6 +25,8 @@ pipeline {
              steps {
                  sh '''
                      npm install
+		     archive '**/target/*.jar'
+		     archiveArtifacts artifacts: '*.zip'
                  '''
              }
          }
