@@ -5,7 +5,7 @@ pipeline {
              args '-u root:root'
 	     image 'node:current-slim' 	
              args '-u root:root'
-	     image 'cytopia/jsonlint' 
+	     image 'darrylb/jsonlint' 
              args '-u root:root'
         }
     }
