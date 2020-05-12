@@ -22,8 +22,8 @@ pipeline {
          stage('Lint') {
               steps {
                  sh '''
-		     jsonlint package.json
-		     jsonlint cypress.json
+		     jsonlint-php package.json
+		     jsonlint-php cypress.json
 		 '''
               }
          }
