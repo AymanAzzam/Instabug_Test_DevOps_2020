@@ -32,6 +32,7 @@ pipeline {
               }
          }
          stage('Test') {
+	      agent any
               steps([$class: 'Xvfb']) { 
                  sh '''
                      yarn test:unit
