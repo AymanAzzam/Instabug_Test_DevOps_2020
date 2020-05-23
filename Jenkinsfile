@@ -2,7 +2,17 @@ pipeline {
      agent none
     
      stages {
-         
+	 agent any
+         stage('Move Files') {		
+             steps {		
+                 sh '''		
+		     cp -r todo-app/* .		
+		     cp todo-app/.eslintrc.js .		
+		     cp todo-app/.editorconfig .		
+		     cp todo-app/.browserslistrc .		
+                 '''		
+             }		
+         }
          stage('Build') {
              agent any
 	     steps {
