@@ -23,12 +23,7 @@ pipeline {
               }
          }
          stage('Test') {
-	      agent {
-		docker {
-			image 'node:latest' 
- 			args '-u root:root'
-		}		         
-             }
+	      agent any
               steps([$class: 'Xvfb']) { 
                  sh '''
 		     npm install --prefix $(pwd)/todo-app
