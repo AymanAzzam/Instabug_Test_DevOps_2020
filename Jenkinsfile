@@ -26,6 +26,7 @@ pipeline {
 	      agent any
               steps([$class: 'Xvfb']) { 
                  sh '''
+		     npm install -g yarn
                      yarn --cwd $(pwd)/todo-app test:unit
 		     yarn --cwd $(pwd)/todo-app test:e2e --headless
 		 '''
