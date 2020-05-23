@@ -6,8 +6,7 @@ pipeline {
          stage('Build') {
              agent any
 	     steps {
-		 sh 'cd todo-app'
-                 sh 'npm install'
+                 sh 'npm install $(pwd)/todo-app'
 		 archiveArtifacts artifacts: '$JENKINS_HOME/jobs/Instabug_Test_DevOps/branches/master/builds/$BUILD_NUMBER/log', allowEmptyArchive: true
 		 archiveArtifacts artifacts: 'node_modules/*/*.json,*.json', allowEmptyArchive: true
              }
