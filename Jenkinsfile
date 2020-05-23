@@ -26,8 +26,8 @@ pipeline {
 	      agent any
               steps([$class: 'Xvfb']) { 
                  sh '''
-                     yarn test:unit
-		     yarn test:e2e --headless
+                     yarn --cwd $(pwd)/todo-app test:unit
+		     yarn --cwd $(pwd)/todo-app test:e2e --headless
 		 '''
               }
          }         
