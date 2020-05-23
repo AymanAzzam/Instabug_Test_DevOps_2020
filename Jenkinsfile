@@ -3,20 +3,10 @@ pipeline {
     
      stages {
 	 
-         stage('Move Files') {	
-	     agent any
-             steps {		
-                 sh '''		
-		     cp -r todo-app/* .		
-		     cp todo-app/.eslintrc.js .		
-		     cp todo-app/.editorconfig .		
-		     cp todo-app/.browserslistrc .		
-                 '''		
-             }		
-         }
          stage('Build') {
              agent any
 	     steps {
+		 sh 'cd todo-app'
                  sh 'npm install'
 		 archiveArtifacts artifacts: '$JENKINS_HOME/jobs/Instabug_Test_DevOps/branches/master/builds/$BUILD_NUMBER/log', allowEmptyArchive: true
 		 archiveArtifacts artifacts: 'node_modules/*/*.json,*.json', allowEmptyArchive: true
