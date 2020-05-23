@@ -2,8 +2,9 @@ pipeline {
      agent none
     
      stages {
-	 agent any
-         stage('Move Files') {		
+	 
+         stage('Move Files') {	
+	     agent any
              steps {		
                  sh '''		
 		     cp -r todo-app/* .		
