@@ -23,7 +23,12 @@ pipeline {
               }
          }
          stage('Test') {
-	      agent any
+	      agent {
+		docker {
+			image 'node:latest' 
+ 			args '-u root:root'
+		}		         
+             }
               steps([$class: 'Xvfb']) { 
                  sh '''
 		     npm install -g yarn
