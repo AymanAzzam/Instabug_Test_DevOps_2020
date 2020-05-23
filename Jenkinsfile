@@ -27,7 +27,7 @@ pipeline {
               steps([$class: 'Xvfb']) { 
                  sh '''
 		     npm install --prefix $(pwd)/todo-app
-		     yarn
+		     npm install -g yarn
                      yarn --cwd $(pwd)/todo-app test:unit
 		     yarn --cwd $(pwd)/todo-app test:e2e --headless
 		 '''
