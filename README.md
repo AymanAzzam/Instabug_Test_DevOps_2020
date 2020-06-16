@@ -1,6 +1,12 @@
 # Instabug_Test_DevOps
 A pipeline using Jenkins with docker to build, lint, test and archive the output as artifacts for a NodeJS app called todo-app and I deployed it on AWS.
 
+## Table of Contents
+- [PreRequisites](#prerequisites)
+- [Run](#run)
+- [Jenkins](#jenkins)
+- [Problems](#problems)
+
 ## PreRequisites 
 1. Docker.
 
