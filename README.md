@@ -1,4 +1,4 @@
-# Instabug_Test_DevOps
+# DevOps Test of Instabug (2020)
 A pipeline using Jenkins with docker to build, lint, test and archive the output as artifacts for a NodeJS app called todo-app and I deployed it on AWS.
 
 ## Table of Contents
